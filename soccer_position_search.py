@@ -18,14 +18,19 @@ positions = [
 
 positions_embedder = model.encode(positions, convert_to_tensor=True)
 
-query = input("Ask your question about a position: ")
-query_embedding = model.encode(query, convert_to_tensor=True)
+while True:
+    query = input("Ask your question about a position (or type 'quit' to exit): ")
+    if query.lower() == "quit":
+        break
 
-similarity_scores = util.cos_sim(query_embedding, positions_embedder)[0]
-top_k = min(3, len(positions))
-scores, indices = torch.topk(similarity_scores, k=top_k)
+    query_embedding = model.encode(query, convert_to_tensor=True)
 
-print("Query:", query)
-print("Top matching sentence(s):")
-for score, idx in zip(scores, indices):
-    print(positions[idx], f"(Score: {score:.4f})")
+    similarity_scores = util.cos_sim(query_embedding, positions_embedder)[0]
+    top_k = min(3, len(positions))
+    scores, indices = torch.topk(similarity_scores, k=top_k)
+
+    print("Query:", query)
+    print("Top matching sentence(s):")
+    for score, idx in zip(scores, indices):
+        print(positions[idx], f"(Score: {score:.4f})")
+    
