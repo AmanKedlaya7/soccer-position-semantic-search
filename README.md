@@ -20,8 +20,8 @@ Type `exit` to quit.
 
 ## Example Queries
 - What is the role of a goalkeeper?  
-- Describe the duties of a striker.  
-- How does a left back contribute to the team?  
+- Who creates chances for the striker?.  
+- Which role combines recovery, wide coverage, and attacking support during transitions on the flank?  
 - What responsibilities does a central attacking midfielder have?
 
 ## Dataset
