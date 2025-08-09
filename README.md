@@ -16,7 +16,7 @@ You can install them with:
 Run the script `soccer_position_search.py`.  
 When prompted, type a question about any soccer position (e.g., "What does a central defensive midfielder do?").  
 The program will display the top 3 matching position descriptions with similarity scores.  
-Type `exit` or Ctrl+C to quit.
+Type `exit` to quit.
 
 ## Example Queries
 - What is the role of a goalkeeper?  
